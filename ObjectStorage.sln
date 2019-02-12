@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoweredSoft.ObjectStorage.Core", "PoweredSoft.ObjectStorage.Core\PoweredSoft.ObjectStorage.Core.csproj", "{81070762-4F21-402D-B10E-6285A46F0572}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoweredSoft.ObjectStorage.MongoDB", "PoweredSoft.ObjectStorage.MongoDB\PoweredSoft.ObjectStorage.MongoDB.csproj", "{D430A3A6-5D41-4B4D-9379-5761FB691619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoweredSoft.ObjectStorage.MongoDB.Tests", "PoweredSoft.ObjectStorage.MongoDB.Tests\PoweredSoft.ObjectStorage.MongoDB.Tests.csproj", "{D8CB2E20-7298-4EEB-9694-C54654B1BD1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81070762-4F21-402D-B10E-6285A46F0572}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{81070762-4F21-402D-B10E-6285A46F0572}.Debug|x86.Build.0 = Debug|Any CPU
+		{81070762-4F21-402D-B10E-6285A46F0572}.Release|x86.ActiveCfg = Release|Any CPU
+		{81070762-4F21-402D-B10E-6285A46F0572}.Release|x86.Build.0 = Release|Any CPU
+		{D430A3A6-5D41-4B4D-9379-5761FB691619}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D430A3A6-5D41-4B4D-9379-5761FB691619}.Debug|x86.Build.0 = Debug|Any CPU
+		{D430A3A6-5D41-4B4D-9379-5761FB691619}.Release|x86.ActiveCfg = Release|Any CPU
+		{D430A3A6-5D41-4B4D-9379-5761FB691619}.Release|x86.Build.0 = Release|Any CPU
+		{D8CB2E20-7298-4EEB-9694-C54654B1BD1C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D8CB2E20-7298-4EEB-9694-C54654B1BD1C}.Debug|x86.Build.0 = Debug|Any CPU
+		{D8CB2E20-7298-4EEB-9694-C54654B1BD1C}.Release|x86.ActiveCfg = Release|Any CPU
+		{D8CB2E20-7298-4EEB-9694-C54654B1BD1C}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
