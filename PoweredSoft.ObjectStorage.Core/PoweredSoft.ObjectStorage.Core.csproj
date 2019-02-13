@@ -2,9 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Copyright>Powered Softwares Inc.</Copyright>
+    <PackageLicenseUrl>https://github.com/PoweredSoft/ObjectStorage/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/PoweredSoft/ObjectStorage</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/PoweredSoft/ObjectStorage/PoweredSoft.ObjectStorage.Core</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <PackageIconUrl>https://secure.gravatar.com/avatar/4e32f73820c16718909a06c2927f1f8b?s=512&amp;r=g&amp;d=retro</PackageIconUrl>
+    <Version>1.1.0$(VersionSuffix)</Version>
+    <Product>PoweredSoft.ObjectStorage.Core</Product>
+    <Description>Abstrastractions of IObjectStorageClient</Description>
+    <PackageId>PoweredSoft.ObjectStorage.Core</PackageId>
+    <PackageReleaseNotes>N/A</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <Company>Powered Softwares Inc.</Company>
+    <Authors>David Lebee</Authors>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Class1.cs" />
-  </ItemGroup>
 </Project>
