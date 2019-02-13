@@ -33,5 +33,24 @@ namespace PoweredSoft.ObjectStorage.MongoDB.Tests
             var shouldBeNull = collection.AsQueryable().FirstOrDefault(t => t.Id == updatedContact.Id);
             Assert.Null(shouldBeNull);
         }
+
+        [Fact]
+        public async Task TestGetAsync()
+        {
+            var osc = MongoDatabaseFactory.GetObjectStorageClient();
+            var collection = osc.GetCollection<Contact>();
+            var contact = await collection.AddAsync(new Contact
+            {
+                FirstName = "David",
+                LastName = "Lebee"
+            });
+
+            // make sure you can retreive it easily.
+            var fetchedUsingGetAsync = await collection.GetAsync(contact.Id);
+            Assert.NotNull(fetchedUsingGetAsync);
+
+            // now delete it.
+            await collection.DeleteAsync(fetchedUsingGetAsync);
+        }
     }
 }
