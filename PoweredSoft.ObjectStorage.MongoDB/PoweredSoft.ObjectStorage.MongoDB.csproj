@@ -7,7 +7,7 @@
     <RepositoryUrl>https://github.com/PoweredSoft/ObjectStorage/PoweredSoft.ObjectStorage.MongoDB</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
     <PackageIconUrl>https://secure.gravatar.com/avatar/4e32f73820c16718909a06c2927f1f8b?s=512&amp;r=g&amp;d=retro</PackageIconUrl>
-    <Version>1.1.0$(VersionSuffix)</Version>
+    <Version>1.0.0$(VersionSuffix)</Version>
     <Product>PoweredSoft.ObjectStorage.MongoDB</Product>
     <Description>Mongo DB Implementation of IObjectStorageClient</Description>
     <PackageId>PoweredSoft.ObjectStorage.MongoDB</PackageId>
