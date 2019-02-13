@@ -2,7 +2,7 @@
 
 namespace PoweredSoft.ObjectStorage.Core
 {
-    public interface IObjectStorageClient
+    public interface IObjectStorageContext
     {
         IObjectStorageCollection<TEntity> GetCollection<TEntity>();
     }

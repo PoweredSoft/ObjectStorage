@@ -5,9 +5,9 @@ using PoweredSoft.ObjectStorage.Core;
 
 namespace PoweredSoft.ObjectStorage.MongoDB
 {
-    public class MongoObjectStorageClient : IObjectStorageClient
+    public class MongoObjectStorageContext : IObjectStorageContext
     {
-        public MongoObjectStorageClient(IMongoDatabase database)
+        public MongoObjectStorageContext(IMongoDatabase database)
         {
             Database = database;
         }

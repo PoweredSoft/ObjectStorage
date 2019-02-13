@@ -12,9 +12,9 @@ namespace PoweredSoft.ObjectStorage.MongoDB.Tests.Mock
             return db;
         }
 
-        public static MongoObjectStorageClient GetObjectStorageClient()
+        public static MongoObjectStorageContext GetObjectStorageContext()
         {
-            return new MongoObjectStorageClient(GetDatabase());
+            return new MongoObjectStorageContext(GetDatabase());
         }
 
         public static IMongoClient GetClient()
