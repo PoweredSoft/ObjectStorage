@@ -39,7 +39,7 @@ namespace PoweredSoft.ObjectStorage.MongoDB
 
         protected virtual Expression<Func<TEntity, bool>> CreateEntityExpression(TEntity entity)
         {
-            var objectKey = GetKeyProperty();
+            var objectKey = GetBsonIdProperty();
             var constant = objectKey.GetValue(entity);
             var expression = QueryableHelpers.CreateConditionExpression<TEntity>(objectKey.Name,
                 DynamicLinq.ConditionOperators.Equal, constant, DynamicLinq.QueryConvertStrategy.LeaveAsIs);
@@ -47,7 +47,7 @@ namespace PoweredSoft.ObjectStorage.MongoDB
             return expression;
         }
 
-        protected virtual PropertyInfo GetKeyProperty()
+        protected virtual PropertyInfo GetBsonIdProperty()
         {
             var objectKey = typeof(TEntity)
                             .GetProperties(BindingFlags.Public | BindingFlags.Instance)
@@ -82,11 +82,19 @@ namespace PoweredSoft.ObjectStorage.MongoDB
 
         public Task<TEntity> GetAsync(object key, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var keyProp = GetKeyProperty();
+            var keyProp = GetBsonIdProperty();
             var expression = QueryableHelpers.CreateConditionExpression<TEntity>(keyProp.Name,
                 DynamicLinq.ConditionOperators.Equal, key, DynamicLinq.QueryConvertStrategy.LeaveAsIs);
             var result = Collection.Find(expression).FirstOrDefaultAsync();
             return result;
+        }
+
+        public List<PropertyInfo> GetObjectKeys()
+        {
+            return new List<PropertyInfo>()
+            {
+                GetBsonIdProperty()
+            };
         }
     }
 }

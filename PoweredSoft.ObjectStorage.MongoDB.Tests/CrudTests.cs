@@ -12,7 +12,7 @@ namespace PoweredSoft.ObjectStorage.MongoDB.Tests
         [Fact]
         public async Task CreateUpdateThenDelete()
         {
-            var osc = MongoDatabaseFactory.GetObjectStorageClient();
+            var osc = MongoDatabaseFactory.GetObjectStorageContext();
             var collection = osc.GetCollection<Contact>();
             var contact = await collection.AddAsync(new Contact
             {
@@ -37,7 +37,7 @@ namespace PoweredSoft.ObjectStorage.MongoDB.Tests
         [Fact]
         public async Task TestGetAsync()
         {
-            var osc = MongoDatabaseFactory.GetObjectStorageClient();
+            var osc = MongoDatabaseFactory.GetObjectStorageContext();
             var collection = osc.GetCollection<Contact>();
             var contact = await collection.AddAsync(new Contact
             {

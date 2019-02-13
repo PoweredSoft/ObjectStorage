@@ -11,7 +11,7 @@ namespace PoweredSoft.ObjectStorage.MongoDB.Tests
         [Fact]
         public void TestingGetCollection()
         {
-            var objectStorageClient = MongoDatabaseFactory.GetObjectStorageClient();
+            var objectStorageClient = MongoDatabaseFactory.GetObjectStorageContext();
             var collection = objectStorageClient.GetCollection<Contact>();
             Assert.NotNull(collection);
             Assert.NotNull(collection.CollectionName);
