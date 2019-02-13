@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoweredSoft.ObjectStorage.M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoweredSoft.ObjectStorage.MongoDB.Tests", "PoweredSoft.ObjectStorage.MongoDB.Tests\PoweredSoft.ObjectStorage.MongoDB.Tests.csproj", "{D8CB2E20-7298-4EEB-9694-C54654B1BD1C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EEF6DA7F-E669-4A23-8EF4-4DD22784DAE3}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		LICENSE.md = LICENSE.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
