@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Copyright>Powered Softwares Inc.</Copyright>
+    <PackageLicenseUrl>https://github.com/PoweredSoft/ObjectStorage/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/PoweredSoft/ObjectStorage</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/PoweredSoft/ObjectStorage/PoweredSoft.ObjectStorage.MongoDB.AspNetCore</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <PackageIconUrl>https://secure.gravatar.com/avatar/4e32f73820c16718909a06c2927f1f8b?s=512&amp;r=g&amp;d=retro</PackageIconUrl>
+    <Version>1.0.0$(VersionSuffix)</Version>
+    <Product>PoweredSoft.ObjectStorage.MongoDB.AspNetCore</Product>
+    <Description>Mongo DB Implementation of IObjectStorageClient</Description>
+    <PackageId>PoweredSoft.ObjectStorage.MongoDB.AspNetCore</PackageId>
+    <PackageReleaseNotes>N/A</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <Company>Powered Softwares Inc.</Company>
+    <Authors>David Lebee</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.7.3" />
+  </ItemGroup>
+    
+    
+</Project>
