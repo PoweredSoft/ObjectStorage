@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE.md = LICENSE.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoweredSoft.ObjectStorage.MongoDB.AspNetCore", "PoweredSoft.ObjectStorage.MongoDB.AspNetCore\PoweredSoft.ObjectStorage.MongoDB.AspNetCore.csproj", "{E69D559E-72F3-47A9-ABE5-D49FD8412DE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -31,5 +33,9 @@ Global
 		{D8CB2E20-7298-4EEB-9694-C54654B1BD1C}.Debug|x86.Build.0 = Debug|Any CPU
 		{D8CB2E20-7298-4EEB-9694-C54654B1BD1C}.Release|x86.ActiveCfg = Release|Any CPU
 		{D8CB2E20-7298-4EEB-9694-C54654B1BD1C}.Release|x86.Build.0 = Release|Any CPU
+		{E69D559E-72F3-47A9-ABE5-D49FD8412DE4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E69D559E-72F3-47A9-ABE5-D49FD8412DE4}.Debug|x86.Build.0 = Debug|Any CPU
+		{E69D559E-72F3-47A9-ABE5-D49FD8412DE4}.Release|x86.ActiveCfg = Release|Any CPU
+		{E69D559E-72F3-47A9-ABE5-D49FD8412DE4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
