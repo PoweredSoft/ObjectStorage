@@ -20,7 +20,7 @@
     <ProjectReference Include="..\PoweredSoft.ObjectStorage.Core\PoweredSoft.ObjectStorage.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.7.3" />
-    <PackageReference Include="PoweredSoft.DynamicLinq" Version="1.1.7" />
+    <PackageReference Include="MongoDB.Driver" Version="2.9.1" />
+    <PackageReference Include="PoweredSoft.DynamicLinq" Version="1.1.8" />
   </ItemGroup>
 </Project>

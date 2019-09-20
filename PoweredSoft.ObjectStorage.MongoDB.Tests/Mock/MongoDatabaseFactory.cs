@@ -19,7 +19,7 @@ namespace PoweredSoft.ObjectStorage.MongoDB.Tests.Mock
 
         public static IMongoClient GetClient()
         {
-            var mongoClient = new MongoClient();
+            var mongoClient = new MongoClient("mongodb://root:example@localhost:27017");
             return mongoClient;
         }
     }
