@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Copyright>Powered Softwares Inc.</Copyright>
@@ -7,7 +7,7 @@
     <RepositoryUrl>https://github.com/PoweredSoft/ObjectStorage/PoweredSoft.ObjectStorage.MongoDB</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
     <PackageIconUrl>https://secure.gravatar.com/avatar/4e32f73820c16718909a06c2927f1f8b?s=512&amp;r=g&amp;d=retro</PackageIconUrl>
-    <Version>1.0.0$(VersionSuffix)</Version>
+    <Version>1.1.0$(VersionSuffix)</Version>
     <Product>PoweredSoft.ObjectStorage.MongoDB</Product>
     <Description>Mongo DB Implementation of IObjectStorageClient</Description>
     <PackageId>PoweredSoft.ObjectStorage.MongoDB</PackageId>
@@ -20,7 +20,7 @@
     <ProjectReference Include="..\PoweredSoft.ObjectStorage.Core\PoweredSoft.ObjectStorage.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.9.1" />
-    <PackageReference Include="PoweredSoft.DynamicLinq" Version="1.1.8" />
+    <PackageReference Include="MongoDB.Driver" Version="2.9.3" />
+    <PackageReference Include="PoweredSoft.DynamicLinq" Version="1.1.9" />
   </ItemGroup>
 </Project>
