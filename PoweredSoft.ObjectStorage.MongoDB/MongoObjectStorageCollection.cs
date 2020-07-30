@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using PoweredSoft.DynamicLinq.Helpers;
 using PoweredSoft.ObjectStorage.Core;
 
@@ -30,6 +31,11 @@ namespace PoweredSoft.ObjectStorage.MongoDB
         {
             await Collection.InsertOneAsync(entity, cancellationToken: cancellationToken);
             return entity;
+        }
+
+        public Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return MongoQueryable.AnyAsync(Collection.AsQueryable(), predicate, cancellationToken);
         }
 
         public IQueryable<TEntity> AsQueryable()
@@ -95,6 +101,131 @@ namespace PoweredSoft.ObjectStorage.MongoDB
             {
                 GetBsonIdProperty()
             };
+        }
+
+        public Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default)
+        {
+            return this.Collection.AsQueryable().FirstOrDefaultAsync(predicate, cancellationToken);
+        }
+
+        public Task<TEntity> FirstAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default)
+        {
+            return this.Collection.AsQueryable().FirstAsync(predicate, cancellationToken);
+        }
+
+        public async Task UpdateManyAsync<TField>(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, TField>> fieldExpression, TField value, CancellationToken cancellationToken = default)
+        {
+            var updateDefinition = Builders<TEntity>.Update.Set<TField>(fieldExpression, value);
+            await Collection.UpdateManyAsync(predicate, updateDefinition, new UpdateOptions()
+            {
+                IsUpsert = false
+            }, cancellationToken);
+        }
+
+        public async Task UpdateManyAsync<TField, TField2>(Expression<Func<TEntity, bool>> predicate, 
+            Expression<Func<TEntity, TField>> fieldExpression, TField value,
+            Expression<Func<TEntity, TField2>> fieldExpression2, TField2 value2,
+
+            CancellationToken cancellationToken = default)
+        {
+            var updateDefinition = Builders<TEntity>.Update
+                .Set(fieldExpression, value)
+                .Set(fieldExpression2, value2)
+                ;
+
+            await Collection.UpdateManyAsync(predicate, updateDefinition, new UpdateOptions()
+            {
+                IsUpsert = false
+            }, cancellationToken);
+        }
+
+        public async Task UpdateManyAsync<TField, TField2, TField3>(Expression<Func<TEntity, bool>> predicate,
+            Expression<Func<TEntity, TField>> fieldExpression, TField value,
+            Expression<Func<TEntity, TField2>> fieldExpression2, TField2 value2,
+            Expression<Func<TEntity, TField3>> fieldExpression3, TField3 value3,
+            CancellationToken cancellationToken = default)
+        {
+            var updateDefinition = Builders<TEntity>.Update
+                .Set(fieldExpression, value)
+                .Set(fieldExpression2, value2)
+                .Set(fieldExpression3, value3)
+                ;
+
+            await Collection.UpdateManyAsync(predicate, updateDefinition, new UpdateOptions()
+            {
+                IsUpsert = false
+            }, cancellationToken);
+        }
+
+        public async Task UpdateOneAsync<TField>(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, TField>> fieldExpression, TField value, CancellationToken cancellationToken = default)
+        {
+            var updateDefinition = Builders<TEntity>.Update.Set<TField>(fieldExpression, value);
+            await Collection.UpdateOneAsync(predicate, updateDefinition, new UpdateOptions()
+            {
+                IsUpsert = false
+            }, cancellationToken);
+        }
+
+        public async Task UpdateOneAsync<TField, TField2>(Expression<Func<TEntity, bool>> predicate, 
+            Expression<Func<TEntity, TField>> fieldExpression, TField value, 
+            Expression<Func<TEntity, TField2>> fieldExpression2, TField2 value2,
+            CancellationToken cancellationToken = default)
+        {
+            var updateDefinition = Builders<TEntity>.Update
+                .Set(fieldExpression, value)
+                .Set(fieldExpression2, value2);
+
+            await Collection.UpdateOneAsync(predicate, updateDefinition, new UpdateOptions()
+            {
+                IsUpsert = false
+            }, cancellationToken);
+        }
+
+        public async Task UpdateOneAsync<TField, TField2, TField3>(Expression<Func<TEntity, bool>> predicate,
+           Expression<Func<TEntity, TField>> fieldExpression, TField value,
+           Expression<Func<TEntity, TField2>> fieldExpression2, TField2 value2,
+           Expression<Func<TEntity, TField3>> fieldExpression3, TField3 value3,
+           CancellationToken cancellationToken = default)
+        {
+            var updateDefinition = Builders<TEntity>.Update
+                .Set(fieldExpression, value)
+                .Set(fieldExpression2, value2)
+                .Set(fieldExpression3, value3)
+                ;
+
+            await Collection.UpdateOneAsync(predicate, updateDefinition, new UpdateOptions()
+            {
+                IsUpsert = false
+            }, cancellationToken);
+        }
+
+        public async Task UpdateOneAsync(Expression<Func<TEntity, bool>> predicate, UpdateDefinition<TEntity> updateDefinition, CancellationToken cancellationToken = default)
+        {
+            await Collection.UpdateOneAsync(predicate, updateDefinition, new UpdateOptions()
+            {
+                IsUpsert = false
+            }, cancellationToken);
+        }
+
+        public async Task UpdateManyAsync(Expression<Func<TEntity, bool>> predicate, UpdateDefinition<TEntity> updateDefinition, CancellationToken cancellationToken = default)
+        {
+            await Collection.UpdateManyAsync(predicate, updateDefinition, new UpdateOptions()
+            {
+                IsUpsert = false
+            }, cancellationToken);
+        }
+
+        public async Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default)
+        {
+            var longResult = await Collection.CountDocumentsAsync(predicate, null, cancellationToken);
+            if (longResult > int.MaxValue)
+                throw new Exception("Exceeds integer maximum value");
+            return (int)longResult;
+        }
+
+        public Task<long> LongCountAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default)
+        {
+            return Collection.CountDocumentsAsync(predicate, null, cancellationToken);
         }
     }
 }
